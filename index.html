@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our 9 Months Together ♡</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* Soft romantic styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff5f5 0%, #fff0f8 100%);
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #8b5a7d;
+            overflow: hidden;
+        }
+
+        /* Watercolor effect */
+        body:before {
+            content: "";
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,230,240,0.3) 0%, rgba(255,240,245,0) 70%);
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #d48fb1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .subtitle {
+            font-weight: 300;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: #b38899;
+        }
+
+        /* Cake design */
+        .cake {
+            position: relative;
+            width: 180px;
+            height: 120px;
+            background: #ffdfeb;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 10px 20px rgba(210,140,170,0.1);
+        }
+
+        .cake-top {
+            position: absolute;
+            width: 200px;
+            height: 30px;
+            background: #ffc0d5;
+            border-radius: 15px;
+            top: -15px;
+            left: -10px;
+            box-shadow: 0 5px 10px rgba(210,140,170,0.1);
+        }
+
+        /* Candle */
+        .candle {
+            position: absolute;
+            width: 8px;
+            height: 50px;
+            background: linear-gradient(to bottom, #a8e6ff 0%, #7fd1ff 100%);
+            border-radius: 4px;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .flame {
+            position: absolute;
+            width: 14px;
+            height: 24px;
+            background: linear-gradient(to bottom, #fff8a0 0%, #ffcc66 70%);
+            border-radius: 50% 50% 20% 20%;
+            top: -24px;
+            left: -3px;
+            box-shadow: 0 0 15px #ffdd99;
+            animation: flicker 2s infinite alternate;
+        }
+
+        @keyframes flicker {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(0.9); opacity: 0.8; }
+        }
+
+        /* Gift box */
+        .gift {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #ff9bb3 0%, #ff85a2 100%);
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(255,130,160,0.15);
+            transition: transform 0.3s;
+        }
+
+        .gift:hover {
+            transform: scale(1.05);
+        }
+
+        .gift:before, .gift:after {
+            content: "";
+            position: absolute;
+            background: rgba(255,255,255,0.3);
+        }
+
+        .gift:before {
+            width: 120px;
+            height: 30px;
+            top: 45px;
+        }
+
+        .gift:after {
+            width: 30px;
+            height: 120px;
+            left: 45px;
+        }
+
+        .gift-ribbon {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ffebf1;
+            border-radius: 50%;
+            top: 50px;
+            left: 50px;
+            box-shadow: 0 0 0 10px rgba(255,235,241,0.3);
+        }
+
+        /* Buttons */
+        .blow-btn {
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: linear-gradient(to right, #ff9bb3 0%, #ff85a2 100%);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(255,130,160,0.2);
+            transition: all 0.3s;
+        }
+
+        .blow-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(255,130,160,0.3);
+        }
+
+        /* Messages */
+        .message {
+            display: none;
+            font-size: 1.8rem;
+            margin: 25px 0;
+            color: #d48fb1;
+            font-weight: 500;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Music player */
+        .audio-btn {
+            width: 50px;
+            height: 50px;
+            background: #ffdfeb;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(210,140,170,0.2);
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: absolute;
+            font-size: 1.2rem;
+            color: #ff9bb3;
+            animation: float 6s ease-in infinite;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1>Our 9 Months Together ♡</h1>
+    <p class="subtitle">Every moment with you is precious</p>
+
+    <div style="display: flex; gap: 40px; align-items: center; justify-content: center; flex-wrap: wrap;">
+        <!-- Cake -->
+        <div class="cake">
+            <div class="cake-top"></div>
+            <div class="candle">
+                <div class="flame" id="flame"></div>
+            </div>
+        </div>
+
+        <!-- Gift -->
+        <div class="gift" id="gift">
+            <div class="gift-ribbon"></div>
+        </div>
+    </div>
+
+    <button class="blow-btn" id="blowBtn">Blow the Candles</button>
+    <p id="counter">Blow 9 times ♡</p>
+
+    <div class="message" id="message">I love you more than words can say ♡</div>
+    <div class="message" id="giftMessage">You're the greatest gift in my life</div>
+
+    <!-- Music Player with Google Drive MP3 -->
+    <audio id="bgMusic" loop>
+        <source src="https://drive.google.com/uc?export=download&id=1dsPPrcXpDxhWCceFuZCdVVYAPT6ElUyz" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button class="audio-btn" id="playBtn">
+        <i class="fas fa-music" style="color: #d48fb1; font-size: 1.2rem;"></i>
+    </button>
+
+    <!-- Hearts -->
+    <div id="hearts-container"></div>
+
+    <script>
+        // Elements
+        const blowBtn = document.getElementById('blowBtn');
+        const flame = document.getElementById('flame');
+        const message = document.getElementById('message');
+        const giftMessage = document.getElementById('giftMessage');
+        const counter = document.getElementById('counter');
+        const gift = document.getElementById('gift');
+        const bgMusic = document.getElementById('bgMusic');
+        const playBtn = document.getElementById('playBtn');
+        const heartsContainer = document.getElementById('hearts-container');
+
+        let blowCount = 0;
+        let isPlaying = false;
+
+        // Blow candles
+        blowBtn.addEventListener('click', () => {
+            blowCount++;
+            counter.textContent = `Blow ${blowCount}/9 times ♡`;
+            
+            if (blowCount === 9) {
+                flame.style.opacity = '0';
+                message.style.display = 'block';
+                blowBtn.style.display = 'none';
+                createHearts(20);
+            }
+        });
+
+        // Open gift
+        gift.addEventListener('click', () => {
+            giftMessage.style.display = 'block';
+            createHearts(10);
+        });
+
+        // Music controls
+        playBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                bgMusic.pause();
+                playBtn.innerHTML = '<i class="fas fa-music" style="color: #d48fb1; font-size: 1.2rem;"></i>';
+            } else {
+                bgMusic.play().catch(e => {
+                    // Fallback if autoplay is blocked
+                    playBtn.innerHTML = 'Click to play';
+                    alert('Please click the play button to start music');
+                });
+                playBtn.innerHTML = '<i class="fas fa-pause" style="color: #d48fb1; font-size: 1.2rem;"></i>';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        // Floating hearts
+        function createHearts(count) {
+            for (let i = 0; i < count; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '♥';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        // Initial hearts
+        createHearts(5);
+        
+        // Enable audio after first user interaction
+        document.body.addEventListener('click', () => {
+            bgMusic.muted = false;
+        }, { once: true });
+    </script>
+</body>
+</html>
